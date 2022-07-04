@@ -27,7 +27,7 @@ def savingDataSession():
     #     "total_pontos": request.form.get('total_pontos'),
     # }
 
-    dado_teste = request.form('data')
+    dado_teste = request.form['data']
     print("Data Response: ", dado_teste)
     #collection.insert_one(dado_teste)
 
