@@ -8,6 +8,10 @@ client = pymongo.MongoClient(
 db = client.get_database('pa_db')
 collection = db.get_collection('sessions')
 
+@app.route("/", methods=["GET"])
+def home():
+    return "teste de inicialização"
+
 @app.route("/saving_data_session", methods=["GET"])
 def savingDataSession():
     dado_teste = {
