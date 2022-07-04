@@ -26,8 +26,10 @@ def savingDataSession():
         "total_palavras": 16,
         "total_pontos": 220
     }
+    system_input = str(request.json['system'])
     #collection.insert_one(dado_teste)
-    return "Session salva com sucesso"
+
+    return system_input
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
