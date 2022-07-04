@@ -12,7 +12,7 @@ collection = db.get_collection('sessions')
 def home():
     return "teste de inicialização"
 
-@app.route("/saving_data_session", methods=["GET"])
+@app.route("/saving_data_session", methods=["POST"])
 def savingDataSession():
     dado_teste = {
         "system": "Android",
@@ -26,7 +26,7 @@ def savingDataSession():
         "total_palavras": 16,
         "total_pontos": 220
     }
-    collection.insert_one(dado_teste)
+    #collection.insert_one(dado_teste)
     return "Session salva com sucesso"
 
 if __name__ == "__main__":
