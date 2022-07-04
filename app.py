@@ -15,19 +15,19 @@ def home():
 @app.route("/saving_data_session", methods=["POST"])
 def savingDataSession():
     dado_teste = {
-        "system": "Android",
-        "ajuda": [False, False, True],
-        "date_session": "20:48 22 June, 2022",
-        "nivel_jogado": "easy",
-        "obj_name": ["Cabine", "Pirulito", "Câmera"],
-        "resposta_certa": [False, False, True],
-        "resposta_errada": [True, True, False],
-        "tempo": [1.7150205373764038, 0.7294141054153442, 2.292156219482422],
-        "total_palavras": 16,
-        "total_pontos": 220
+        "system": request.form.get('system'),
+        "ajuda": request.form.get('ajuda'),
+        "date_session": request.form.get('date_session'),
+        "nivel_jogado": request.form.get('nivel_jogado'),
+        "obj_name": request.form.get('obj_name'),
+        "resposta_certa": request.form.get('resposta_certa'),
+        "resposta_errada": request.form.get('resposta_errada'),
+        "tempo": request.form.get('tempo'),
+        "total_palavras": request.form.get('total_palavras'),
+        "total_pontos": request.form.get('total_pontos'),
     }
-    system = request.form.get('system')
-    print(system)
+
+    print(dado_teste)
 
     #collection.insert_one(dado_teste)
     return "Session salva com sucesso"
