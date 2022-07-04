@@ -26,8 +26,9 @@ def savingDataSession():
         "total_palavras": 16,
         "total_pontos": 220
     }
-    #system_input = str(request.json['system'])
-    #print(system_input)
+    system = request.form.get('system')
+    print(system)
+
     #collection.insert_one(dado_teste)
     return "Session salva com sucesso"
 
