@@ -27,9 +27,10 @@ def savingDataSession():
     #     "total_pontos": request.form.get('total_pontos'),
     # }
 
-    #print(request.form.get('data'))
+    dado_teste = request.form.get('data')
+    print(dado_teste)
+    collection.insert_one(dado_teste)
 
-    collection.insert_one(request.form.get('data'))
     return "Session salva com sucesso"
 
 if __name__ == "__main__":
