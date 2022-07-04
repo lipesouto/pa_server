@@ -27,9 +27,9 @@ def savingDataSession():
         "total_pontos": 220
     }
     system_input = str(request.json['system'])
+    print(system_input)
     #collection.insert_one(dado_teste)
-
-    return system_input
+    return "Session salva com sucesso"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
