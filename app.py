@@ -7,6 +7,7 @@ client = pymongo.MongoClient(
     "mongodb+srv://admin:Palavra2022@palavraanimada.o2bklie.mongodb.net/?retryWrites=true&w=majority")
 db = client.get_database('pa_db')
 collection = db.get_collection('sessions')
+dbo = client.eaedw.sqlData
 
 @app.route("/", methods=["GET"])
 def home():
@@ -29,7 +30,8 @@ def savingDataSession():
 
     dado_teste = request.form.get('data')
     print(dado_teste)
-    collection.insert_one(dado_teste)
+    #collection.insert_one(dado_teste)
+    dbo.insert_many(dado_teste)
 
     return "Session salva com sucesso"
 
