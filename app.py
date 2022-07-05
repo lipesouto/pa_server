@@ -14,22 +14,21 @@ def home():
 
 @app.route("/saving_data_session", methods=["POST"])
 def savingDataSession():
-    # dado_teste = {
-    #     "system": request.form.get('system'),
-    #     "ajuda": request.form.get('ajuda'),
-    #     "date_session": request.form.get('date_session'),
-    #     "nivel_jogado": request.form.get('nivel_jogado'),
-    #     "obj_name": request.form.get('obj_name'),
-    #     "resposta_certa": request.form.get('resposta_certa'),
-    #     "resposta_errada": request.form.get('resposta_errada'),
-    #     "tempo": request.form.get('tempo'),
-    #     "total_palavras": request.form.get('total_palavras'),
-    #     "total_pontos": request.form.get('total_pontos'),
-    # }
+    dado_teste = {
+        "system": request.json['system'],
+        "ajuda": request.json['ajuda'],
+        "date_session": request.json['date_session'],
+        "nivel_jogado": request.json['nivel_jogado'],
+        "obj_name": request.json['obj_name'],
+        "resposta_certa": request.json['resposta_certa'],
+        "resposta_errada": request.json['resposta_errada'],
+        "tempo": request.json['tempo'],
+        "total_palavras": request.json['total_palavras'],
+        "total_pontos": request.json['total_pontos'],
+        "version":request.json['version']
+    }
 
-    dado_teste = request.form['data']
-    print("Data Response: ", dado_teste)
-    #collection.insert_one(dado_teste)
+    collection.insert_one(dado_teste)
 
     return "Session salva com sucesso"
 
